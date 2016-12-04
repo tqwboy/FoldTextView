@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.tqw.foldtextview.example.MainActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.tqw.foldtextview.FoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:text="onMeasure方法调用了setMeasuredDimension(int measuredWidth, int measuredHeight)方法，而传入的参数已经是测量过的默认宽和高的值了；我们看看getDefaultSize 方法是怎么计算测量宽高的。根据父控件给予的约束，发现AT_MOST （相当于wrap_content ）和EXACTLY （相当于match_parent ）两种情况返回的测量宽高都是specSize，而这个specSize正是我们上面说的父控件剩余的宽高，所以默认onMeasure方法中wrap_content 和match_parent 的效果是一样的，都是填充剩余的空间。"/>
+
+</RelativeLayout>
